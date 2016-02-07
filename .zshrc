@@ -16,7 +16,7 @@ compinit
 
 source ~/.antigen/antigen.zsh
 antigen use oh-my-zsh
-antigen theme afowler
+antigen theme lambda
 antigen apply
 
 # virtualenvwrapper
