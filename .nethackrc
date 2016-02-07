@@ -1,0 +1,15 @@
+OPTIONS=color, boulder=0, hilite_pet, menucolors, lit_corridor, time
+
+# Configure Autopickup
+OPTIONS=autopickup
+OPTIONS=pickup_types:$
+OPTIONS=pickup_burden:unencumbered
+OPTIONS=pickup_thrown
+# AUTOPICKUP_EXCEPTION="<..*dagger"
+#
+#
+
+MENUCOLOR=".* uncursed .*"=green
+MENUCOLOR=".* blessed .*"=cyan
+MENUCOLOR=".* cursed .*"=red
+MENUCOLOR=".* cursed .*(being worn)"=red&underline
