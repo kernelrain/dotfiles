@@ -21,10 +21,10 @@ Plug 'mattn/emmet-vim', {'for': ['html', 'css']}
 Plug 'junegunn/vim-easy-align'
 Plug 'scrooloose/nerdcommenter'
 
-" Plug 'MarcWeber/vim-addon-mw-utils'
-" Plug 'tomtom/tlib_vim'
-" Plug 'garbas/vim-snipmate'
-" Plug 'kernelrain/vim-snippets'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'kernelrain/vim-snippets'
 
 Plug 'scrooloose/nerdtree'
 
