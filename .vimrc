@@ -20,11 +20,13 @@ Plug 'tpope/vim-surround'
 Plug 'mattn/emmet-vim', {'for': ['html', 'css']}
 Plug 'junegunn/vim-easy-align'
 Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-speeddating'
+Plug 'jceb/vim-orgmode'
 
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
-Plug 'kernelrain/vim-snippets'
+Plug 'honza/vim-snippets'
 
 Plug 'scrooloose/nerdtree'
 
@@ -50,6 +52,7 @@ set autoread
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
 let mapleader = ","
+let maplocalleader = "\\"
 let g:mapleader = ","
 
 " Fast saving & closing
@@ -216,13 +219,6 @@ map <leader>bd :bd<cr>
 map <leader>ba :1,1000 bd!<cr>
 
 
-" Switch buffers with left/right keys
-nnoremap <left> :bp<cr>
-nnoremap <right> :bn<cr>
-" Switch tabs with up/down keys
-nnoremap <up> :tabn<cr>
-nnoremap <down> :tabp<cr>
-
 " Useful mappings for managing tabs
 map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
@@ -257,6 +253,7 @@ set viminfo^=%
 " Always show the status line
 set laststatus=2
 let g:airline#extensions#tabline#enabled=1
+let g:airline_powerline_fonts=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => EasyAlign key bindings

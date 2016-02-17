@@ -17,6 +17,8 @@ compinit
 source ~/.antigen/antigen.zsh
 antigen use oh-my-zsh
 antigen theme lambda
+antigen bundle git
+antigen bundle python
 antigen apply
 
 # virtualenvwrapper
