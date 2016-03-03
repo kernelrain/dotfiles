@@ -1,16 +1,11 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Vundle Plugin Manager
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 set nocompatible
 filetype off
-" set rtp+=~/.vim/bundle/Vundle.vim
-" call vundle#begin()
-"
-"
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Vim-Plug Plugin Manager
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 
-" Plug 'VundleVim/Vundle.vim'
 Plug 'bling/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
@@ -28,10 +23,10 @@ Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
 
-Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-commentary'
 
 call plug#end()
-" call vundle#end()
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

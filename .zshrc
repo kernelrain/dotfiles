@@ -16,7 +16,7 @@ compinit
 
 source ~/.antigen/antigen.zsh
 antigen use oh-my-zsh
-antigen theme lambda
+antigen theme afowler
 antigen bundle git
 antigen bundle python
 antigen apply
@@ -25,4 +25,7 @@ antigen apply
 source /usr/bin/virtualenvwrapper.sh
 
 eval $(dircolors ~/.dircolors)
+
+# Damn, I wish i could remember...
+alias vim='nvim'
 
