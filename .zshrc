@@ -3,7 +3,7 @@ function mkcd {
     cd $1
 }
 
-export PATH=$PATH:$HOME/.gem/ruby/2.3.0/bin/
+export PATH=$PATH:$HOME/.gem/ruby/2.3.0/bin/:$HOME/.cargo/bin
 export GOPATH=$HOME/src/Go/
 
 HISTFILE=~/.histfile
@@ -14,15 +14,28 @@ bindkey -e
 autoload -Uz compinit
 compinit
 
-source ~/.antigen/antigen.zsh
-antigen use oh-my-zsh
-antigen theme lambda
-antigen bundle git
-antigen bundle python
-antigen apply
+autoload -U promptinit
+promptinit
+prompt walters
+
+# source ~/.antigen/antigen.zsh
+# antigen use oh-my-zsh
+# antigen theme lambda
+# antigen bundle git
+# antigen bundle python
+# antigen apply
 
 # virtualenvwrapper
 source /usr/bin/virtualenvwrapper.sh
 
 eval $(dircolors ~/.dircolors)
 
+alias ls='ls --color=auto'
+
+if ! pgrep -u $USER ssh-agent > /dev/null; then
+    ssh-agent > ~/.ssh-agent-thing
+fi
+if [[ "$SSH_AGENT_PID" == "" ]]; then
+    eval $(<~/.ssh-agent-thing)
+fi
+ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'

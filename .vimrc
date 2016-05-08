@@ -1,16 +1,8 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Vundle Plugin Manager
+" => Vim-Plug Plugin Manager
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-set nocompatible
-filetype off
-" set rtp+=~/.vim/bundle/Vundle.vim
-" call vundle#begin()
-"
-"
 call plug#begin('~/.vim/plugged')
 
-" Plug 'VundleVim/Vundle.vim'
 Plug 'bling/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
@@ -19,22 +11,25 @@ Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'tpope/vim-surround'
 Plug 'mattn/emmet-vim', {'for': ['html', 'css']}
 Plug 'junegunn/vim-easy-align'
-Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-speeddating'
 Plug 'jceb/vim-orgmode'
+Plug 'scrooloose/nerdtree'
+Plug 'Shougo/neocomplete'
 
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
 
-Plug 'scrooloose/nerdtree'
-
 call plug#end()
-" call vundle#end()
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible
+filetype off
+
 " Sets how many lines of history VIM has to remember
 set history=700
 
@@ -83,6 +78,11 @@ let g:jedi#usages_command = "<leader>u"
 let g:jedi#use_splits_not_buffers = "right"
 let g:jedi#popup_select_first = 0
 let g:jedi#popup_on_dot = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => NeoComplete configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:neocomplete#enable_on_startup = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -159,7 +159,7 @@ if has("gui_running")
     set guioptions+=e
     set t_Co=256
     set guitablabel=%M\ %t
-    set guifont=Meslo\ LG\ S\ Bold 9
+    set guifont=Meslo\ LG\ S\ DZ\ Bold\ 9
 endif
 
 " Use Unix as the standard file type
@@ -253,7 +253,7 @@ set viminfo^=%
 " Always show the status line
 set laststatus=2
 let g:airline#extensions#tabline#enabled=1
-let g:airline_powerline_fonts=1
+let g:airline_powerline_fonts=0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => EasyAlign key bindings
