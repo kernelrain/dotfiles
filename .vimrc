@@ -12,8 +12,6 @@ Plug 'tpope/vim-surround'
 Plug 'mattn/emmet-vim', {'for': ['html', 'css']}
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-speeddating'
-Plug 'jceb/vim-orgmode'
 Plug 'scrooloose/nerdtree'
 Plug 'Shougo/neocomplete'
 
@@ -21,6 +19,8 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
+
+Plug 'leafgarland/typescript-vim'
 
 call plug#end()
 
@@ -63,7 +63,7 @@ nnoremap <leader>m :bn<cr>
 " Enable mouse
 set mouse=a
 
-set foldmethod=syntax
+set foldmethod=indent
 " 1 foldlevel by default
 set foldlevel=1
 " use space to toggle folds
