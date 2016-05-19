@@ -24,6 +24,12 @@ prompt walters
 # antigen bundle git
 # antigen bundle python
 # antigen apply
+source ~/.antigen/antigen.zsh
+antigen use oh-my-zsh
+antigen theme afowler
+antigen bundle git
+antigen bundle python
+antigen apply
 
 # virtualenvwrapper
 source /usr/bin/virtualenvwrapper.sh
@@ -39,3 +45,6 @@ if [[ "$SSH_AGENT_PID" == "" ]]; then
     eval $(<~/.ssh-agent-thing)
 fi
 ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
+# Damn, I wish i could remember...
+alias vim='nvim'
+

@@ -1,3 +1,6 @@
+set nocompatible
+filetype off
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim-Plug Plugin Manager
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -20,7 +23,7 @@ Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
 
-Plug 'leafgarland/typescript-vim'
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 
