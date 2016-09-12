@@ -6,17 +6,22 @@ filetype off
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
-Plug 'flazz/vim-colorschemes'
+
+Plug 'chriskempson/base16-vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'nanotech/jellybeans.vim'
+Plug 'joshdick/onedark.vim'
+
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'tpope/vim-surround'
 Plug 'mattn/emmet-vim', {'for': ['html', 'css']}
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-commentary'
 Plug 'scrooloose/nerdtree'
-Plug 'Shougo/neocomplete'
 
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
@@ -24,6 +29,10 @@ Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
 
 Plug 'tpope/vim-commentary'
+Plug 'fsharp/vim-fsharp', {'do': 'make fsautocomplete'}
+
+Plug 'ervandew/supertab'
+let g:SuperTabDefaultCompletionType = "context"
 
 call plug#end()
 
@@ -37,8 +46,7 @@ filetype off
 set history=700
 
 " Enable filetype plugins
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 
 " Reselect visual block after indent/outdent
 vnoremap < <gv
@@ -61,6 +69,10 @@ nmap <leader>q :q!<cr>
 nnoremap <leader>n :bp<cr>
 nnoremap <leader>m :bn<cr>
 
+" Edit .vimrc
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
 " nnoremap <C-S-p> :CtrlPBuffer<cr>
 
 " Enable mouse
@@ -72,7 +84,7 @@ set foldlevel=1
 " use space to toggle folds
 nnoremap <space> za
 
-set completeopt=menuone
+" set completeopt=menuone
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Jedi configuration
@@ -80,7 +92,7 @@ set completeopt=menuone
 let g:jedi#usages_command = "<leader>u"
 let g:jedi#use_splits_not_buffers = "right"
 let g:jedi#popup_select_first = 0
-let g:jedi#popup_on_dot = 1
+let g:jedi#popup_on_dot = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => NeoComplete configuration
@@ -153,8 +165,8 @@ set tm=500
 " Enable syntax highlighting
 syntax enable
 
-set background=dark
-colorscheme jellybeans
+colorscheme onedark
+set background=light
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -263,6 +275,13 @@ let g:airline_powerline_fonts=0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Snipmate
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+imap <C-J> <Plug>snipMateNextOrTrigger
+smap <C-J> <Plug>snipMateNextOrTrigger
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings

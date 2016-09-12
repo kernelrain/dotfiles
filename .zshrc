@@ -3,7 +3,7 @@ function mkcd {
     cd $1
 }
 
-export PATH=$PATH:$HOME/.gem/ruby/2.3.0/bin/:$HOME/.cargo/bin
+export PATH=$PATH:$HOME.gem/ruby/2.3.0/bin/:$HOME.cargo/bin
 export GOPATH=$HOME/src/Go/
 
 HISTFILE=~/.histfile
@@ -48,3 +48,5 @@ ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias 
 # Damn, I wish i could remember...
 alias vim='nvim'
 
+# OPAM configuration
+. /home/georgios/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true

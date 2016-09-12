@@ -13,11 +13,13 @@ files = (
         '.termite.config',
         '.i3.config',
         '.spectrwm.conf',
+        '.config.fish',
         )
 
 rules = {
         '.termite.config': '.config/termite/config',
-        '.i3.config':      '.i3/config'
+        '.i3.config':      '.i3/config',
+        '.config.fish':    '.config/fish/config.fish',
         }
 
 parser = argparse.ArgumentParser(description='Create symlinks to managed dotfiles.')
