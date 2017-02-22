@@ -11,29 +11,25 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
 
-Plug 'chriskempson/base16-vim'
-Plug 'altercation/vim-colors-solarized'
-Plug 'nanotech/jellybeans.vim'
+" Plug 'chriskempson/base16-vim'
+" Plug 'altercation/vim-colors-solarized'
+" Plug 'nanotech/jellybeans.vim'
 Plug 'joshdick/onedark.vim'
 
-Plug 'rust-lang/rust.vim', {'for': 'rust'}
+Plug 'rust-lang/rust.vim'
 Plug 'tpope/vim-surround'
 Plug 'mattn/emmet-vim', {'for': ['html', 'css']}
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-commentary'
-Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdtree'
 
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
-Plug 'garbas/vim-snipmate'
-Plug 'honza/vim-snippets'
+" Plug 'garbas/vim-snipmate'
+" Plug 'honza/vim-snippets'
 
-Plug 'tpope/vim-commentary'
-Plug 'fsharp/vim-fsharp', {'do': 'make fsautocomplete'}
-
-Plug 'ervandew/supertab'
-let g:SuperTabDefaultCompletionType = "context"
-
+Plug 'tpope/vim-speeddating'
+Plug 'jceb/vim-orgmode'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -95,15 +91,11 @@ let g:jedi#popup_select_first = 0
 let g:jedi#popup_on_dot = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => NeoComplete configuration
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:neocomplete#enable_on_startup = 1
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable line numbers
 set number
+set relativenumber
 
 " set scrolloffset to 2 lines (always keep 2 lines in each direction visible around the current line)
 set scrolloff=2
@@ -158,7 +150,8 @@ set novisualbell
 set t_vb=
 set tm=500
 
-
+" integrated fuzzy finder
+set path+=**
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -294,3 +287,6 @@ func! DeleteTrailingWS()
   exe "normal `z"
 endfunc
 autocmd BufWrite * :call DeleteTrailingWS()
+
+" Generate ctags
+autocmd BufWritePost *.c,*.cpp,*.h,*.hpp,*.py,*.rb silent! !ctags -R .
