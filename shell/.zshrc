@@ -20,7 +20,7 @@ compinit
 # antigen bundle python
 # antigen apply
 source ~/.antigen/antigen.zsh
-# antigen use oh-my-zsh
+antigen use oh-my-zsh
 antigen theme afowler
 antigen bundle git
 antigen bundle python
