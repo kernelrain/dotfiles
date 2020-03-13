@@ -9,6 +9,7 @@ inst () {
 inst shell/.zshrc ~/
 inst shell/.tmux.conf ~/
 inst shell/.tmux ~/
+inst shell/.config/fish ~/.config/fish
 
 inst editor/.vimrc ~/
 inst editor/.vimrc ~/.config/nvim/init.vim
