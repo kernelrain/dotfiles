@@ -26,16 +26,8 @@ antigen bundle git
 antigen bundle python
 antigen apply
 
-# virtualenvwrapper
-export WORKON_HOME=~/envs
-source /usr/local/bin/virtualenvwrapper_lazy.sh
-
-# eval $(dircolors ~/.dircolors)
-
 alias ls='ls --color=auto'
 alias vim=nvim
-
-alias cluster='ssh gs012506@login18-1.hpc.itc.rwth-aachen.de'
 
 # if ! pgrep -u $USER ssh-agent > /dev/null; then
 #     ssh-agent > ~/.ssh-agent-thing
