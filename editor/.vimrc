@@ -1,68 +1,44 @@
 set nocompatible
 filetype off
 
-set runtimepath+=/usr/local/share/lilypond/current/vim/
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim-Plug Plugin Manager
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
+Plug 'ap/vim-buftabline'
+
 Plug 'majutsushi/tagbar'
+
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'flazz/vim-colorschemes'
-Plug 'junegunn/seoul256.vim'
-Plug 'Yggdroot/indentLine'
-" Plug 'lifepillar/vim-solarized8'
-Plug 'romainl/flattened'
-Plug 'davidhalter/jedi-vim', {'for': 'python'}
-Plug 'Vimjas/vim-python-pep8-indent'
-Plug 'JuliaLang/julia-vim', {'for': 'julia'}
-Plug 'neovimhaskell/haskell-vim', {'for': 'haskell'}
-
-Plug 'rust-lang/rust.vim'
-Plug 'tpope/vim-surround'
-Plug 'mattn/emmet-vim', {'for': ['html', 'css', 'htmldjango']}
-Plug 'junegunn/vim-easy-align'
-Plug 'tpope/vim-commentary'
-" Plug 'neovimhaskell/haskell-vim'
-Plug 'PeterRincker/vim-argumentative'
 Plug 'morhetz/gruvbox'
 
-Plug 'rhysd/vim-clang-format'
-Plug 'tikhomirov/vim-glsl'
-" Plug 'kongo2002/fsharp-vim'
-Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
-" Plug 'rhysd/vim-color-spring-night'
-" Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+
+Plug 'junegunn/vim-easy-align'
+Plug 'PeterRincker/vim-argumentative'
+
+Plug 'perservim/nerdtree'
 
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 
-Plug 'jvirtanen/vim-octave'
+Plug 'rhysd/vim-clang-format'
 
-" Plug 'MarcWeber/vim-addon-mw-utils'
-" Plug 'tomtom/tlib_vim'
-" Plug 'garbas/vim-snipmate'
-" Plug 'honza/vim-snippets'
-
-" Plug 'tpope/vim-speeddating'
-" Plug 'jceb/vim-orgmode'
+" language specific plugins
 "
-Plug 'leafgarland/typescript-vim'
-" Plug 'dart-lang/dart-vim-plugin'
-" Plug 'HerringtonDarkholme/yats.vimPlug'
+Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
+Plug 'davidhalter/jedi-vim', {'for': 'python'}
+Plug 'tikhomirov/vim-glsl'
+Plug 'mattn/emmet-vim', {'for': ['html', 'css', 'htmldjango']}
+Plug 'kongo2002/fsharp-vim', {'for': 'fsharp'}
+Plug 'JuliaLang/julia-vim', {'for': 'julia'}
+Plug 'neovimhaskell/haskell-vim', {'for': 'haskell'}
 
-" Plug 'lervag/vimtex', {'for': ['plaintex', 'latex', 'tex']}
-"
-" Plug 'JesseKPhillips/d.vim'
-" Plug 'scarface-one/vim-dlang-phobos-highlighter'
-" Plug 'ElmCast/elm-vim'
-" Plug 'udalov/kotlin-vim'
-
-Plug 'mxw/vim-jsx'
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
@@ -204,9 +180,8 @@ syntax enable
 
 " set termguicolors
 set background=dark
-" colorscheme solarized8_dark_high
-" colorscheme flattened_dark
-colorscheme jellybeans
+let g:gruvbox_contrast_dark='hard'
+colorscheme gruvbox
 
 " Set extra options when running in GUI mode
 if has("gui_running")
