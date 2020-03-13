@@ -1,7 +1,0 @@
-URxvt.scrollBar: rxvt
-URxvt.font: xft:DejaVu Sans Mono:size=9
-!URxvt.font: xft:Meslo LG S DZ for Powerline
-urxvt.font: xft:Meslo LG S DZ-9:bold
-urxvt.letterSpace: -1
-Xft.rgba: none
-Xft.hinstyle: hintfull

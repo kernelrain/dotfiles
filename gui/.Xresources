@@ -1,0 +1,47 @@
+URxvt.scrollBar: rxvt
+
+URxvt.font: xft:Iosevka Term:bold:size=11
+URxvt.boldFont: xft:Iosevka Term:bold:size=11
+
+/* URxvt.font: xft:Fira Code Regular:size=11 */
+/* URxvt.boldFont: xft:Fira Code Bold:size=11 */
+
+
+
+/* URxvt.font: xft:Ubuntu Mono:size=10 */
+/* URxvt.boldFont: xft:Ubuntu Mono:size=10 */
+
+/* URxvt.font: xft:Source Code Pro for Powerline:style=Semibold:size=10 */
+/* URxvt.boldFont: xft:Source Code Pro for Powerline:style=Semibold:size=10 */
+
+/* URxvt.font: xft:Input Mono::size=10 */
+/* URxvt.boldFont: xft:Input Mono::size=10 */
+
+/* URxvt.font: xft:Meslo LG S DZ:bold:size=9 */
+/* URxvt.boldFont: xft:Meslo LG S DZ:bold:size=9 */
+
+/* URxvt.font: xft:Meslo LG S DZ for Powerline:bold:size=9 */
+/* URxvt.boldFont: xft:Meslo LG S DZ for Powerline:bold:size=9 */
+
+/* URxvt.font: xft:Droid Sans Mono:bold:size=11 */
+/* URxvt.boldFont: xft:Droid Sans Mono:bold:size=11 */
+
+URxvt.letterSpace: -1
+Xft.autohint:   0
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintfull
+Xft.lcdfilter:  lcddefault
+
+
+/* #include ".Xresources.d/dracula.theme" */
+/* #include ".Xresources.d/gruvbox-dark.theme" */
+#include ".Xresources.d/tango.theme"
+/* #include ".Xresources.d/gruvbox.theme" */
+/* #include ".Xresources.d/Arthur.theme" */
+/* #include ".Xresources.d/atom_one_light.theme" */
+/* #include ".Xresources.d/solarized.theme" */
+/* #include ".Xresources.d/paper.theme" */
+/* #include ".Xresources.d/base16/base16-tomorrow-night-256.Xresources" */

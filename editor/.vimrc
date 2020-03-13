@@ -1,6 +1,8 @@
 set nocompatible
 filetype off
 
+set runtimepath+=/usr/local/share/lilypond/current/vim/
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim-Plug Plugin Manager
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -8,28 +10,60 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'majutsushi/tagbar'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'flazz/vim-colorschemes'
+Plug 'junegunn/seoul256.vim'
+Plug 'Yggdroot/indentLine'
+" Plug 'lifepillar/vim-solarized8'
+Plug 'romainl/flattened'
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
-
-" Plug 'chriskempson/base16-vim'
-" Plug 'altercation/vim-colors-solarized'
-" Plug 'nanotech/jellybeans.vim'
-Plug 'joshdick/onedark.vim'
+Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'JuliaLang/julia-vim', {'for': 'julia'}
+Plug 'neovimhaskell/haskell-vim', {'for': 'haskell'}
 
 Plug 'rust-lang/rust.vim'
 Plug 'tpope/vim-surround'
-Plug 'mattn/emmet-vim', {'for': ['html', 'css']}
+Plug 'mattn/emmet-vim', {'for': ['html', 'css', 'htmldjango']}
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-commentary'
+" Plug 'neovimhaskell/haskell-vim'
+Plug 'PeterRincker/vim-argumentative'
+Plug 'morhetz/gruvbox'
+
+Plug 'rhysd/vim-clang-format'
+Plug 'tikhomirov/vim-glsl'
+" Plug 'kongo2002/fsharp-vim'
+Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
+" Plug 'rhysd/vim-color-spring-night'
 " Plug 'scrooloose/nerdtree'
 
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+
+Plug 'jvirtanen/vim-octave'
+
+" Plug 'MarcWeber/vim-addon-mw-utils'
+" Plug 'tomtom/tlib_vim'
 " Plug 'garbas/vim-snipmate'
 " Plug 'honza/vim-snippets'
 
-Plug 'tpope/vim-speeddating'
-Plug 'jceb/vim-orgmode'
+" Plug 'tpope/vim-speeddating'
+" Plug 'jceb/vim-orgmode'
+"
+Plug 'leafgarland/typescript-vim'
+" Plug 'dart-lang/dart-vim-plugin'
+" Plug 'HerringtonDarkholme/yats.vimPlug'
+
+" Plug 'lervag/vimtex', {'for': ['plaintex', 'latex', 'tex']}
+"
+" Plug 'JesseKPhillips/d.vim'
+" Plug 'scarface-one/vim-dlang-phobos-highlighter'
+" Plug 'ElmCast/elm-vim'
+" Plug 'udalov/kotlin-vim'
+
+Plug 'mxw/vim-jsx'
+
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -43,6 +77,8 @@ set history=700
 
 " Enable filetype plugins
 filetype plugin indent on
+
+set encoding=utf-8
 
 " Reselect visual block after indent/outdent
 vnoremap < <gv
@@ -70,6 +106,12 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " nnoremap <C-S-p> :CtrlPBuffer<cr>
+nnoremap <leader>p iimport numpy as np<CR>import matplotlib.pyplot as plt<CR><ESC>
+
+nnoremap <leader>t :CtrlPBufTag<CR>
+
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+
 
 " Enable mouse
 set mouse=a
@@ -89,6 +131,7 @@ let g:jedi#usages_command = "<leader>u"
 let g:jedi#use_splits_not_buffers = "right"
 let g:jedi#popup_select_first = 0
 let g:jedi#popup_on_dot = 0
+let g:jedi#smart_auto_mappings = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -157,17 +200,22 @@ set path+=**
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
 syntax enable
+" syntax off
 
-colorscheme onedark
-set background=light
+" set termguicolors
+set background=dark
+" colorscheme solarized8_dark_high
+" colorscheme flattened_dark
+colorscheme jellybeans
 
 " Set extra options when running in GUI mode
 if has("gui_running")
     set guioptions-=T
+    set guioptions-=m
     set guioptions+=e
     set t_Co=256
     set guitablabel=%M\ %t
-    set guifont=Meslo\ LG\ S\ DZ\ Bold\ 9
+    set guifont=DejaVu\ Sans\ Mono\ Bold\ 10
 endif
 
 " Use Unix as the standard file type
@@ -180,7 +228,6 @@ set ffs=unix,dos,mac
 set nobackup
 set nowb
 set noswapfile
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
@@ -200,7 +247,8 @@ set lbr
 set tw=500
 
 set autoindent "Auto indent
-set smartindent "Smart indent
+" set smartindent "Smart indent
+set nosmartindent
 set wrap "Wrap lines
 
 
@@ -226,17 +274,6 @@ map <leader>bd :bd<cr>
 " Close all the buffers
 map <leader>ba :1,1000 bd!<cr>
 
-
-" Useful mappings for managing tabs
-map <leader>tn :tabnew<cr>
-map <leader>to :tabonly<cr>
-map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove
-
-" Opens a new tab with the current buffer's path
-" Super useful when editing files in the same directory
-map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
-
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
@@ -247,13 +284,6 @@ try
 catch
 endtry
 
-" Return to last edit position when opening files (You want this!)
-autocmd BufReadPost *
-     \ if line("'\"") > 0 && line("'\"") <= line("$") |
-     \   exe "normal! g`\"" |
-     \ endif
-" Remember info about open buffers on close
-set viminfo^=%
 
 """"""""""""""""""""""""""""""
 " => Status line (airline)
@@ -270,13 +300,6 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Snipmate
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-imap <C-J> <Plug>snipMateNextOrTrigger
-smap <C-J> <Plug>snipMateNextOrTrigger
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -286,7 +309,51 @@ func! DeleteTrailingWS()
   %s/\s\+$//ge
   exe "normal `z"
 endfunc
-autocmd BufWrite * :call DeleteTrailingWS()
 
-" Generate ctags
-autocmd BufWritePost *.c,*.cpp,*.h,*.hpp,*.py,*.rb silent! !ctags -R .
+augroup vimrc_autocmd
+    autocmd!
+    autocmd BufWrite * :call DeleteTrailingWS()
+
+    " Generate ctags
+    " autocmd BufWritePost *.c,*.cpp,*.h,*.hpp,*.py,*.rb silent! !ctags -R .
+    "
+    autocmd FileType c,cpp nnoremap <buffer><Leader>cf :ClangFormat<CR>
+    " Return to last edit position when opening files (You want this!)
+    autocmd BufReadPost *
+         \ if line("'\"") > 0 && line("'\"") <= line("$") |
+         \   exe "normal! g`\"" |
+         \ endif
+augroup END
+
+" Remember info about open buffers on close
+set viminfo^=%
+
+let g:clang_format#style_options = {
+            \ "ColumnLimit": 80,
+            \ "Standard" : "C++11"
+            \}
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Java
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>jc :!javac %<CR>
+nnoremap <leader>jj :!java %:r<CR>
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Fortran
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let fortran_free_source=1
+let fortran_have_tabs=1
+let fortran_more_precise=1
+let fortran_do_enddo=1
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Python
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>bp Oimport ipdb; ipdb.set_trace()<ESC><ESC>j
+
+autocmd FileType octave setl cms=#\ %s;
+
+nnoremap <F8> :TagbarToggle<CR>
