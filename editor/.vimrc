@@ -6,8 +6,11 @@ filetype off
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 
-Plug 'itchyny/lightline.vim'
-Plug 'ap/vim-buftabline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" Plug 'itchyny/lightline.vim'
+" Plug 'ap/vim-buftabline'
 
 Plug 'majutsushi/tagbar'
 
@@ -77,17 +80,33 @@ nmap <leader>q :q!<cr>
 nnoremap <leader>n :bp<cr>
 nnoremap <leader>m :bn<cr>
 
+" sane splits
+set splitright
+set splitbelow
+
+" Permanent undo
+set undodir=~/.vimdid
+set undofile
+
+" use H and L to go to beginning / end of line
+map H ^
+map L $
+
+" Center search results
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz
+nnoremap <silent> * *zz
+nnoremap <silent> # #zz
+nnoremap <silent> g* g*zz
+nnoremap <silent> g# g#zz
+
 " Edit .vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
-" nnoremap <C-S-p> :CtrlPBuffer<cr>
-nnoremap <leader>p iimport numpy as np<CR>import matplotlib.pyplot as plt<CR><ESC>
-
 nnoremap <leader>t :CtrlPBufTag<CR>
 
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
-
 
 " Enable mouse
 set mouse=a
