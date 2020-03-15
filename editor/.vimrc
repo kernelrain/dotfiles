@@ -31,6 +31,8 @@ Plug 'plasticboy/vim-markdown'
 
 Plug 'rhysd/vim-clang-format'
 
+Plug 'dense-analysis/ale'
+
 " language specific plugins
 "
 Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
@@ -130,6 +132,12 @@ set foldlevel=1
 nnoremap <space> za
 
 " set completeopt=menuone
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Ale configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ale_linters = {'python': ['pycodestyle']}
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Jedi configuration
