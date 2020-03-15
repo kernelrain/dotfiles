@@ -28,7 +28,7 @@ URxvt.boldFont: xft:Iosevka Term:bold:size=11
 
 URxvt.letterSpace: -1
 Xft.autohint:   0
-Xft.dpi:        96
+Xft.dpi:        120
 Xft.antialias:  true
 Xft.rgba:       rgb
 Xft.hinting:    true
@@ -38,7 +38,7 @@ Xft.lcdfilter:  lcddefault
 
 /* #include ".Xresources.d/dracula.theme" */
 /* #include ".Xresources.d/gruvbox-dark.theme" */
-#include ".Xresources.d/tango.theme"
+/* #include ".Xresources.d/tango.theme" */
 /* #include ".Xresources.d/gruvbox.theme" */
 /* #include ".Xresources.d/Arthur.theme" */
 /* #include ".Xresources.d/atom_one_light.theme" */

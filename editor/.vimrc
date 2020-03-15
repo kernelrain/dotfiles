@@ -92,6 +92,18 @@ set undofile
 map H ^
 map L $
 
+" Easier access to ESC
+imap jj <ESC>
+nnoremap <C-k> <Esc>
+inoremap <C-k> <Esc>
+vnoremap <C-k> <Esc>
+snoremap <C-k> <Esc>
+xnoremap <C-k> <Esc>
+cnoremap <C-k> <Esc>
+onoremap <C-k> <Esc>
+lnoremap <C-k> <Esc>
+tnoremap <C-k> <Esc>
+
 " Center search results
 nnoremap <silent> n nzz
 nnoremap <silent> N Nzz
