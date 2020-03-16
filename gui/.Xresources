@@ -28,7 +28,7 @@ URxvt.boldFont: xft:Iosevka Term:bold:size=11
 
 URxvt.letterSpace: -1
 Xft.autohint:   0
-Xft.dpi:        120
+/* Xft.dpi:        120 */
 Xft.antialias:  true
 Xft.rgba:       rgb
 Xft.hinting:    true

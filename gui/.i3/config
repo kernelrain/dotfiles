@@ -167,11 +167,16 @@ client.unfocused #333333 #333333 #888888 #292d2e
 client.urgent #2f343a #900000 #ffffff #900000
 
 # exec volumeicon
-exec urxvt -e tmux
+# exec urxvt -e tmux
 # exec_always --no-startup-id $HOME/.screenlayout/acer.sh
 # exec terminator
 # exec_always feh --bg-fill ~/wallpapers/Softe/1366x768/softe\ no\ logo.png
-exec_always feh --bg-fill ~/wallpapers/Perspective_view_of_Korolev_crater.tif
+# exec_always feh --bg-fill ~/wallpapers/Perspective_view_of_Korolev_crater.tif
+
+exec_always ~/.screenlayout/layout.sh
+exec_always volumeicon
+exec_always nm-applet
+exec_always nitrogen --restore
 
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
