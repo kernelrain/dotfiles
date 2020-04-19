@@ -13,15 +13,9 @@ bindkey -e
 autoload -Uz compinit
 compinit
 
-# source ~/.antigen/antigen.zsh
-# antigen use oh-my-zsh
-# antigen theme lambda
-# antigen bundle git
-# antigen bundle python
-# antigen apply
-source ~/.antigen/antigen.zsh
+source ~/.antigen.zsh
 antigen use oh-my-zsh
-antigen theme afowler
+antigen theme robbyrussell
 antigen bundle git
 antigen bundle python
 antigen apply
@@ -39,3 +33,10 @@ alias vim=nvim
 
 # OPAM configuration
 . /home/georgios/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+# emscripten
+# source ~/src/emsdk/emsdk_env.sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+alias copyimg='xclip -t image/png -sel clip'
