@@ -2,7 +2,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -117,7 +117,9 @@ want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 # screen shots
 # bindsym --release $mod+Shift+s exec ~/.i3/scrot.sh
 # bindsym --release $mod+button1 exec $HOME/.i3/scrot.sh
-bindsym $mod+Print exec flameshot -gui
+# bindsym $mod+Print exec flameshot -gui
+bindsym --release Print exec "maim -s --format=png /dev/stdout | xclip -selection clipboard -t image/png -i"
+# bindsym $mod+Shift+s exec touch /tmp/potato.txt
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

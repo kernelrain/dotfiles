@@ -13,6 +13,8 @@ inst shell/.config/fish ~/.config/fish
 
 inst editor/.vimrc ~/
 inst editor/.vimrc ~/.config/nvim/init.vim
+inst editor/coc-settings.json ~/.config/nvim/coc-settings.json
+inst editor/config ~/.config/nvim/config
 
 inst gui/.Xresources ~/
 inst gui/.i3/config ~/.i3/config
