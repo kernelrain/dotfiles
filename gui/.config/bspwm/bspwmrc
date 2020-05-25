@@ -1,0 +1,49 @@
+#! /bin/sh
+
+wait_kill() {
+    for pid in `pgrep $1`; do
+        kill $pid
+        wait $pid
+    done
+}
+
+wait_kill sxhkd
+sxhkd &
+
+# killall sxhkd
+# while pgrep -u $UID -x sxhkd > /dev/null; do sleep 0.5; done
+# sxhkd &
+
+# killall polybar
+# # wait for polybar to exit
+# while pgrep -u $UID -x polybar > /dev/null; do sleep 0.5; done
+
+wait_kill polybar
+polybar top &
+polybar top_external &
+
+nitrogen --restore &
+sh ~/.screenlayout/layout.sh &
+
+# bspc monitor -d I II III IV V VI VII VIII IX X
+
+bspc monitor HDMI1 -d 1 3 5 7 9
+bspc monitor LVDS1 -d 2 4 6 8 10
+
+bspc config normal_border_color "#484848"
+bspc config focused_border_color "#1F8999"
+
+bspc config border_width         3
+bspc config window_gap          5
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc config focus_follows_pointer true
+
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Chromium desktop='^2'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off

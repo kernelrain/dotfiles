@@ -19,5 +19,8 @@ inst editor/config ~/.config/nvim/config
 inst gui/.Xresources ~/
 inst gui/.i3/config ~/.i3/config
 inst gui/.config/termite/config ~/.config/termite/config
+inst gui/.config/sxhkd/sxhkdrc ~/.config/sxhkd/sxhkdrc
+inst gui/.config/bspwm/bspwmrc ~/.config/bspwm/bspwmrc
+inst gui/.config/polybar/config ~/.config/polybar/config
 
 inst misc/.nethackrc ~/
